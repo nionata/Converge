@@ -208,7 +208,7 @@
         <!--Converge-->
         <scene sceneID="va7-cl-SRE">
             <objects>
-                <tableViewController id="agq-Kl-MVK" customClass="HomeTableViewController" customModule="Converge" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="myHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="agq-Kl-MVK" customClass="HomeTableViewController" customModule="Converge" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" id="uhL-Ly-Ose">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -218,7 +218,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="81"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qhx-qY-v3C" id="A9V-jx-pou">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -238,12 +238,14 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cNc-h7-XUK">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="u17-bg-EEk" kind="show" id="4zN-dq-aJ8"/>
+                                <segue destination="u17-bg-EEk" kind="show" identifier="toCreateAccount" id="4zN-dq-aJ8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="table" destination="uhL-Ly-Ose" id="WcO-yC-hRr"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toSignIn" id="iEF-Bx-qIk"/>
+                        <segue destination="DPd-xH-8C3" kind="show" identifier="toEventTabs" id="JFH-Ah-b4N"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeD-aK-W4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -267,7 +269,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="u17-bg-EEk" id="TeC-fX-cfB"/>
                                 </connections>
@@ -288,6 +290,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add or Create a Group" id="hCF-9U-tnV"/>
                     <connections>
+                        <outlet property="button" destination="9jd-E9-vGf" id="raq-iU-7Mz"/>
                         <outlet property="newEvent" destination="rHO-hE-ndf" id="quo-Eu-ncU"/>
                     </connections>
                 </viewController>
@@ -317,7 +320,7 @@
         <!--Formation-->
         <scene sceneID="39W-UJ-o19">
             <objects>
-                <viewController id="yEU-so-0Ub" sceneMemberID="viewController">
+                <viewController id="yEU-so-0Ub" customClass="EventFormViewController" customModule="Converge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iIP-Sw-YS2"/>
                         <viewControllerLayoutGuide type="bottom" id="agd-Vz-Fq5"/>
