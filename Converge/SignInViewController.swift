@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
@@ -16,7 +17,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		self.navigationController?.navigationBar.isHidden = true
+		
+		FIRAuth.auth()?.addStateDidChangeListener { (auth, user) in
+			if user != nil {
+				self.performSegue(withIdentifier: "toHomeFromIn", sender: self)
+			}
+		}
 	}
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -39,7 +46,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 					self.newEmail.text = ""
 					self.newPassword.text = ""
 					self.newPassword.resignFirstResponder()
-					//Perform some segue
+					self.performSegue(withIdentifier: "toHomeFromIn", sender: self)
 				} else {
 					let alertController = UIAlertController(title: "Oops!", message: error?.localizedDescription, preferredStyle: .alert)
 					let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
