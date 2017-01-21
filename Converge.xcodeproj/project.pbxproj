@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D5C30421E33BC2600205313 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D5C30411E33BC2600205313 /* Main.storyboard */; };
+		2D5C30441E33C97200205313 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5C30431E33C97200205313 /* NewEventViewController.swift */; };
 		2D6C8F511E336E1500A6A21C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6C8F501E336E1500A6A21C /* AppDelegate.swift */; };
 		2D6C8F531E336E1500A6A21C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6C8F521E336E1500A6A21C /* SignInViewController.swift */; };
-		2D6C8F561E336E1500A6A21C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6C8F541E336E1500A6A21C /* Main.storyboard */; };
 		2D6C8F581E336E1500A6A21C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6C8F571E336E1500A6A21C /* Assets.xcassets */; };
 		2D6C8F5B1E336E1500A6A21C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6C8F591E336E1500A6A21C /* LaunchScreen.storyboard */; };
 		2D6C8F631E336F6B00A6A21C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D6C8F621E336F6B00A6A21C /* GoogleService-Info.plist */; };
@@ -21,10 +22,11 @@
 /* Begin PBXFileReference section */
 		0DC2DCA6BE870EE72BDD7654 /* Pods_Converge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Converge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		173C0C86B6108482CA287C9A /* Pods-Converge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Converge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Converge/Pods-Converge.debug.xcconfig"; sourceTree = "<group>"; };
+		2D5C30411E33BC2600205313 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2D5C30431E33C97200205313 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		2D6C8F4D1E336E1500A6A21C /* Converge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Converge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6C8F501E336E1500A6A21C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D6C8F521E336E1500A6A21C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		2D6C8F551E336E1500A6A21C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D6C8F571E336E1500A6A21C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D6C8F5A1E336E1500A6A21C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D6C8F5C1E336E1500A6A21C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,7 +82,8 @@
 				2D6C8F521E336E1500A6A21C /* SignInViewController.swift */,
 				2D6C8F641E337A7600A6A21C /* SignUpViewController.swift */,
 				2D6C8F661E337A9300A6A21C /* HomeTableViewController.swift */,
-				2D6C8F541E336E1500A6A21C /* Main.storyboard */,
+				2D5C30411E33BC2600205313 /* Main.storyboard */,
+				2D5C30431E33C97200205313 /* NewEventViewController.swift */,
 				2D6C8F571E336E1500A6A21C /* Assets.xcassets */,
 				2D6C8F591E336E1500A6A21C /* LaunchScreen.storyboard */,
 				2D6C8F5C1E336E1500A6A21C /* Info.plist */,
@@ -163,7 +166,7 @@
 				2D6C8F5B1E336E1500A6A21C /* LaunchScreen.storyboard in Resources */,
 				2D6C8F631E336F6B00A6A21C /* GoogleService-Info.plist in Resources */,
 				2D6C8F581E336E1500A6A21C /* Assets.xcassets in Resources */,
-				2D6C8F561E336E1500A6A21C /* Main.storyboard in Resources */,
+				2D5C30421E33BC2600205313 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +227,7 @@
 			files = (
 				2D6C8F671E337A9300A6A21C /* HomeTableViewController.swift in Sources */,
 				2D6C8F651E337A7600A6A21C /* SignUpViewController.swift in Sources */,
+				2D5C30441E33C97200205313 /* NewEventViewController.swift in Sources */,
 				2D6C8F531E336E1500A6A21C /* SignInViewController.swift in Sources */,
 				2D6C8F511E336E1500A6A21C /* AppDelegate.swift in Sources */,
 			);
@@ -232,14 +236,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2D6C8F541E336E1500A6A21C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D6C8F551E336E1500A6A21C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2D6C8F591E336E1500A6A21C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
