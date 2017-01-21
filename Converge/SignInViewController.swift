@@ -33,7 +33,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 	}
 
 	@IBAction func onSignIn(_ sender: Any) {
-		if(newEmail.text != "" || newPassword.text != "") {
+		if(newEmail.text != "" && newPassword.text != "") {
 			FIRAuth.auth()?.signIn(withEmail: self.newEmail.text!, password: self.newPassword.text!, completion: { (user, error) in
 				if(error == nil) {
 					self.newEmail.text = ""
