@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class NewSubViewController: UIViewController {
+class NewSubViewController: UIViewController, UITextFieldDelegate {
 
 	@IBOutlet weak var newIdea: UITextField!
 	var ref = FIRDatabase.database().reference()
@@ -26,6 +26,17 @@ class NewSubViewController: UIViewController {
 			newIdea.placeholder = "Write your specialty here"
 		}
     }
+	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		view.endEditing(true)
+	}
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		if(textField == self.newIdea) {
+			self.onAddIdea(self)
+		}
+		return false
+	}
 	
 	@IBAction func onAddIdea(_ sender: Any) {
 		if(newIdea.text != "") {
