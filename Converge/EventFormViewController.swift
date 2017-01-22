@@ -65,7 +65,7 @@ class EventFormViewController: UIViewController {
 	
 	@IBAction func onConnect(_ sender: Any) {
 		var index: Int
-		var text: String
+		var text: String = ""
 		
 		if(segControl.selectedSegmentIndex == 0) {
 			index = self.myFormData.ideaIndex!
@@ -80,8 +80,10 @@ class EventFormViewController: UIViewController {
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
 			let textField = alert?.textFields![0]
 			text = (textField?.text)!
-			self.ref.child("events").child(self.myFormData.myEvent!).child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].id).child("pending").child((FIRAuth.auth()?.currentUser?.uid)!).setValue(textField?.text)
-			self.ref.child("users").child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].owner).child("events").child(self.myFormData.myEvent!).child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].id).child("requests").child((FIRAuth.auth()?.currentUser?.uid)!).child("message").setValue(textField?.text)
+			//self.ref.child("events").child(self.myFormData.myEvent!).child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].id).child("pending").child((FIRAuth.auth()?.currentUser?.uid)!).setValue(textField?.text)
+			let newRef = self.ref.child("users").child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].owner).child("events").child(self.myFormData.myEvent!).child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].id).child("requests").child((FIRAuth.auth()?.currentUser?.uid)!)
+			newRef.child("message").setValue(textField?.text)
+			newRef.child("name").setValue(FIRAuth.auth()?.currentUser?.displayName)
 		}))
 		self.present(alert, animated: true, completion: nil)
 		
