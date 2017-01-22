@@ -10,6 +10,7 @@
 		2D5C30421E33BC2600205313 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D5C30411E33BC2600205313 /* Main.storyboard */; };
 		2D5C30441E33C97200205313 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5C30431E33C97200205313 /* NewEventViewController.swift */; };
 		2D5C304B1E33EDE700205313 /* EventFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5C304A1E33EDE700205313 /* EventFormViewController.swift */; };
+		2D5C304D1E33FA2E00205313 /* NewSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5C304C1E33FA2E00205313 /* NewSubViewController.swift */; };
 		2D6C8F511E336E1500A6A21C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6C8F501E336E1500A6A21C /* AppDelegate.swift */; };
 		2D6C8F531E336E1500A6A21C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6C8F521E336E1500A6A21C /* SignInViewController.swift */; };
 		2D6C8F581E336E1500A6A21C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6C8F571E336E1500A6A21C /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		2D5C30411E33BC2600205313 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2D5C30431E33C97200205313 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		2D5C304A1E33EDE700205313 /* EventFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFormViewController.swift; sourceTree = "<group>"; };
+		2D5C304C1E33FA2E00205313 /* NewSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSubViewController.swift; sourceTree = "<group>"; };
 		2D6C8F4D1E336E1500A6A21C /* Converge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Converge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6C8F501E336E1500A6A21C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D6C8F521E336E1500A6A21C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -59,13 +61,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		2D5C30451E33DAEC00205313 /* Structs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Structs;
-			sourceTree = "<group>";
-		};
 		2D6C8F441E336E1500A6A21C = {
 			isa = PBXGroup;
 			children = (
@@ -87,13 +82,13 @@
 		2D6C8F4F1E336E1500A6A21C /* Converge */ = {
 			isa = PBXGroup;
 			children = (
-				2D5C30451E33DAEC00205313 /* Structs */,
 				2D6C8F501E336E1500A6A21C /* AppDelegate.swift */,
 				2D6C8F521E336E1500A6A21C /* SignInViewController.swift */,
 				2D6C8F641E337A7600A6A21C /* SignUpViewController.swift */,
 				2D6C8F661E337A9300A6A21C /* HomeTableViewController.swift */,
 				2D5C30431E33C97200205313 /* NewEventViewController.swift */,
 				2D5C304A1E33EDE700205313 /* EventFormViewController.swift */,
+				2D5C304C1E33FA2E00205313 /* NewSubViewController.swift */,
 				2D5C30411E33BC2600205313 /* Main.storyboard */,
 				2D6C8F571E336E1500A6A21C /* Assets.xcassets */,
 				2D6C8F591E336E1500A6A21C /* LaunchScreen.storyboard */,
@@ -241,6 +236,7 @@
 				2D5C30441E33C97200205313 /* NewEventViewController.swift in Sources */,
 				2D5C304B1E33EDE700205313 /* EventFormViewController.swift in Sources */,
 				2D6C8F531E336E1500A6A21C /* SignInViewController.swift in Sources */,
+				2D5C304D1E33FA2E00205313 /* NewSubViewController.swift in Sources */,
 				2D6C8F511E336E1500A6A21C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
