@@ -13,6 +13,7 @@ import FirebaseDatabase
 
 class EventFormViewController: UIViewController {
 	
+	var ref = FIRDatabase.database().reference()
 	var event: String = ""
 	@IBOutlet weak var segControl: UISegmentedControl!
 	@IBOutlet weak var insertField: UITextView!
@@ -74,8 +75,8 @@ class EventFormViewController: UIViewController {
 		}
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
 			let textField = alert?.textFields![0]
-			FIRDatabase.database().reference().child("events").child(self.myFormData.myEvent!).child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].id).child("pending").child((FIRAuth.auth()?.currentUser?.uid)!).setValue(textField?.text)
-			FIRDatabase.database().reference().child("users").child(FIRAuth.auth()?.currentUser?.uid).child("events").child(self.myFormData.myEvent).child("Outward requests")
+			self.ref.child("events").child(self.myFormData.myEvent!).child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].id).child("pending").child((FIRAuth.auth()?.currentUser?.uid)!).setValue(textField?.text)
+			self.ref.child("users").child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].owner).child("events").child(self.myFormData.myEvent!).child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].id).child("requests").child((FIRAuth.auth()?.currentUser?.uid)!).child("message").setValue(textField?.text)
 		}))
 		self.present(alert, animated: true, completion: nil)
 		

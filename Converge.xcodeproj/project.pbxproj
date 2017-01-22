@@ -18,6 +18,7 @@
 		2D6C8F631E336F6B00A6A21C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D6C8F621E336F6B00A6A21C /* GoogleService-Info.plist */; };
 		2D6C8F651E337A7600A6A21C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6C8F641E337A7600A6A21C /* SignUpViewController.swift */; };
 		2D6C8F671E337A9300A6A21C /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6C8F661E337A9300A6A21C /* HomeTableViewController.swift */; };
+		2DA636091E34DBBB00C6273E /* ManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA636081E34DBBB00C6273E /* ManagementViewController.swift */; };
 		2DA844F01E34739F00E43D40 /* FormationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA844EF1E34739F00E43D40 /* FormationData.swift */; };
 		2DA844F21E34805800E43D40 /* Formation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA844F11E34805800E43D40 /* Formation.swift */; };
 		8C5498F842DF5781E44447C7 /* Pods_Converge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC2DCA6BE870EE72BDD7654 /* Pods_Converge.framework */; };
@@ -39,6 +40,7 @@
 		2D6C8F621E336F6B00A6A21C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D6C8F641E337A7600A6A21C /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2D6C8F661E337A9300A6A21C /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		2DA636081E34DBBB00C6273E /* ManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagementViewController.swift; sourceTree = "<group>"; };
 		2DA844EF1E34739F00E43D40 /* FormationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationData.swift; sourceTree = "<group>"; };
 		2DA844F11E34805800E43D40 /* Formation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formation.swift; sourceTree = "<group>"; };
 		E476596F3D0FCFDC53838A10 /* Pods-Converge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Converge.release.xcconfig"; path = "Pods/Target Support Files/Pods-Converge/Pods-Converge.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,8 +94,9 @@
 				2D6C8F641E337A7600A6A21C /* SignUpViewController.swift */,
 				2D6C8F661E337A9300A6A21C /* HomeTableViewController.swift */,
 				2D5C30431E33C97200205313 /* NewEventViewController.swift */,
-				2D5C304A1E33EDE700205313 /* EventFormViewController.swift */,
 				2D5C304C1E33FA2E00205313 /* NewSubViewController.swift */,
+				2D5C304A1E33EDE700205313 /* EventFormViewController.swift */,
+				2DA636081E34DBBB00C6273E /* ManagementViewController.swift */,
 				2D5C30411E33BC2600205313 /* Main.storyboard */,
 				2D6C8F571E336E1500A6A21C /* Assets.xcassets */,
 				2D6C8F591E336E1500A6A21C /* LaunchScreen.storyboard */,
@@ -254,6 +257,7 @@
 				2DA844F21E34805800E43D40 /* Formation.swift in Sources */,
 				2D6C8F511E336E1500A6A21C /* AppDelegate.swift in Sources */,
 				2DA844F01E34739F00E43D40 /* FormationData.swift in Sources */,
+				2DA636091E34DBBB00C6273E /* ManagementViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
