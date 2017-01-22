@@ -28,6 +28,9 @@ class EventFormViewController: UIViewController {
 	
 	override func viewDidAppear(_ animated: Bool) {
 		onSegControl(segControl)
+		let vc = self.tabBarController?.viewControllers?[1] as? ManagementViewController
+		vc?.myFormData = myFormData
+		vc?.event = event
 	}
 	
 	@IBAction func onNext(_ sender: Any) {
