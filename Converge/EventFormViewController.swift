@@ -65,6 +65,7 @@ class EventFormViewController: UIViewController {
 	
 	@IBAction func onConnect(_ sender: Any) {
 		var index: Int
+		var text: String
 		
 		if(segControl.selectedSegmentIndex == 0) {
 			index = self.myFormData.ideaIndex!
@@ -78,10 +79,27 @@ class EventFormViewController: UIViewController {
 		}
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
 			let textField = alert?.textFields![0]
+			text = (textField?.text)!
 			self.ref.child("events").child(self.myFormData.myEvent!).child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].id).child("pending").child((FIRAuth.auth()?.currentUser?.uid)!).setValue(textField?.text)
 			self.ref.child("users").child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].owner).child("events").child(self.myFormData.myEvent!).child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].id).child("requests").child((FIRAuth.auth()?.currentUser?.uid)!).child("message").setValue(textField?.text)
 		}))
 		self.present(alert, animated: true, completion: nil)
+		
+		Session.shared.authentication = Authentication.apiKey("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")
+		let personalization = Personalization(recipients: (FIRAuth.auth()?.currentUser?.email)!)
+		let plainText = Content(contentType: ContentType.plainText, value: "A user wanted to work with you. Here is some additional info: \(text)")
+		let htmlText = Content(contentType: ContentType.htmlText, value: "<h1>Hello World</h1>")
+		let email = Email(
+			personalizations: [personalization],
+			from: Address("n.ionata129@gmail.com"),
+			content: [plainText, htmlText],
+			subject: "New Connection On Converge!"
+		)
+		do {
+			try Session.shared.send(request: email)
+		} catch {
+			print(error)
+		}
 		
 	}
 	

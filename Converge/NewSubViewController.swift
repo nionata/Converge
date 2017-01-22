@@ -20,6 +20,7 @@ class NewSubViewController: UIViewController, UITextFieldDelegate {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
 		if(ideaOrPerson == 0) {
 			newIdea.placeholder = "Write your idea here"
 		} else if(ideaOrPerson == 1) {

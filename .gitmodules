@@ -1,0 +1,3 @@
+[submodule "sendgrid-swift"]
+	path = sendgrid-swift
+	url = https://github.com/scottkawai/sendgrid-swift.git

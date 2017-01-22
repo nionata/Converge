@@ -21,7 +21,6 @@ class ManagementData: NSObject {
 	var ref = FIRDatabase.database().reference()
 	var myEvent: String?
 	var teams: [[Team]] = [[], []]
-	var count = 0
 	var myData: FormationData
 	var state = manState.loading
 	
@@ -45,14 +44,17 @@ class ManagementData: NSObject {
 				for form: Formation in self.myData.data[0] {
 					if(form.id == ideaKey) {
 						self.teams[1].append(Team(meta: form, members: []))
-						self.count = self.count + 1
+						
 					}
+					
+					/*if(id.value["requests"] != nil) {
+						self.teams[0].append(Team)
+					}*/
 				}
 				
 				for form: Formation in self.myData.data[1] {
 					if(form.id == ideaKey) {
 						self.teams[1].append(Team(meta: form, members: []))
-						self.count = self.count + 1
 					}
 				}
 				
