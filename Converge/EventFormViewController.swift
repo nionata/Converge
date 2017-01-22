@@ -11,48 +11,30 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-struct Formation {
-	var idea: String?
-	var owner: String?
-	var id: String?
-}
-
 class EventFormViewController: UIViewController {
 	
 	var ref = FIRDatabase.database().reference()
 	var event: String = ""
-	var formationData: [[Formation]] = [[], []]
 	@IBOutlet weak var segControl: UISegmentedControl!
 	@IBOutlet weak var insertField: UITextView!
 	@IBOutlet weak var button: UIButton!
-	var ideaIndex: Int = 0
-	var freelancerIndex: Int = 0
+	var myFormData: FormationData!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		navigationController?.topViewController?.title = event
-		loadFormation()
+		myFormData = FormationData(event: event)
 	}
 	
-	func loadData(whichOne: Int, index: Int) {
-		insertField.text = formationData[whichOne][index].idea
+	override func viewDidAppear(_ animated: Bool) {
+		onSegControl(segControl)
 	}
 	
-	func loadFormation() {
-		ref.child("subs").child(event).observeSingleEvent(of: .value, with: { (snapshot) in
-			if let ideas = snapshot.childSnapshot(forPath: "idea").value as? [String: AnyObject] {
-				for id in ideas {
-					self.formationData[0].append(Formation(idea: id.value["idea"]! as! String?, owner: id.value["creator"]! as! String?, id: id.key))
-				}
-			}
-			
-			if let freelancers = snapshot.childSnapshot(forPath: "freelancer").value as? [String: AnyObject] {
-				for id in freelancers {
-					self.formationData[1].append(Formation(idea: id.value["idea"]! as! String?, owner: id.value["creator"]! as! String?, id: id.key))
-				}
-			}
-			
-			if(checkArray(whichOne: 0)) {
+	@IBAction func onNext(_ sender: Any) {
+		if(segControl.selectedSegmentIndex == 0) {
+			if (myFormData.ideaIndex != nil) {
+				insertField.text = myFormData.nextIdea(toggle: true)
+			} else {
 				let alertController = UIAlertController(title: "Oops!", message: "There are no ideas at this time. Come back later or add your own!", preferredStyle: .alert)
 				let addIdea = UIAlertAction(title: "Add Idea", style: .default, handler: { (UIAlertAction) in
 					self.performSegue(withIdentifier: "toAddIdea", sender: self)
@@ -61,59 +43,77 @@ class EventFormViewController: UIViewController {
 				alertController.addAction(addIdea)
 				alertController.addAction(defaultAction)
 				self.present(alertController, animated: true, completion: nil)
-				return
 			}
-			
-			if(checkArray(whichOne: 1)) {
+		} else if(segControl.selectedSegmentIndex == 1) {
+			if (myFormData.freelancerIndex != nil) {
+				insertField.text = myFormData.nextFreelancer(toggle: true)
+			} else {
 				let alertController = UIAlertController(title: "Oops!", message: "There are no freelancers at this time. Come back later or add yourself!", preferredStyle: .alert)
-				let addFreelancer = UIAlertAction(title: "Add Yourself", style: .default, handler: { (UIAlertAction) in
+				let addIdea = UIAlertAction(title: "Add Yourself", style: .default, handler: { (UIAlertAction) in
 					self.performSegue(withIdentifier: "toAddIdea", sender: self)
 				})
 				let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-				alertController.addAction(addFreelancer)
+				alertController.addAction(addIdea)
 				alertController.addAction(defaultAction)
 				self.present(alertController, animated: true, completion: nil)
-				return
 			}
-			
-			self.loadData(whichOne: 0, index: self.ideaIndex)
-		})
-	}
-	
-	func checkArray(whichOne: Int) -> Bool {
-		return formationData[whichOne].count != 0
-	}
-	
-	@IBAction func onNext(_ sender: Any) {
-		if(segControl.selectedSegmentIndex == 0) {
-			if(ideaIndex == formationData[0].count - 1) {
-				ideaIndex = 0
-			} else {
-				ideaIndex = ideaIndex + 1
-			}
-		
-			loadData(whichOne: 0, index: ideaIndex)
-		} else if(segControl.selectedSegmentIndex == 1) {
-			if(freelancerIndex == formationData[1].count - 1) {
-				freelancerIndex = 0
-			} else {
-				freelancerIndex = freelancerIndex + 1
-			}
-		
-			loadData(whichOne: 1, index: freelancerIndex)
 		}
 	}
 	
 	@IBAction func onConnect(_ sender: Any) {
+		var index: Int
+		
+		if(segControl.selectedSegmentIndex == 0) {
+			index = self.myFormData.ideaIndex!
+		} else {
+			index = self.myFormData.freelancerIndex!
+		}
+		
+		let alert = UIAlertController(title: "Thank You", message: "We will notify the original poster immedietly about your interest. Please say a few words below about any relevant work or anything else.", preferredStyle: .alert)
+		alert.addTextField { (textField) in
+			textField.text = ""
+		}
+		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+			let textField = alert?.textFields![0]
+			self.ref.child("events").child(self.myFormData.myEvent!).child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].id).child("pending").child((FIRAuth.auth()?.currentUser?.uid)!).setValue(textField?.text)
+			self.ref.child("users").child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].owner).child("events").child(self.myFormData.myEvent!).child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].id).child("requests").child((FIRAuth.auth()?.currentUser?.uid)!).child("message").setValue(textField?.text)
+		}))
+		self.present(alert, animated: true, completion: nil)
+		
 	}
-	
 	
 	@IBAction func onSegControl(_ sender: UISegmentedControl) {
 		if(sender.selectedSegmentIndex == 0) {
-			loadData(whichOne: 0, index: ideaIndex)
+			if (myFormData.ideaIndex != nil) {
+				insertField.text = myFormData.nextIdea()
+			} else {
+				let alertController = UIAlertController(title: "Oops!", message: "There are no ideas at this time. Come back later or add your own!", preferredStyle: .alert)
+				let addIdea = UIAlertAction(title: "Add Idea", style: .default, handler: { (UIAlertAction) in
+					self.performSegue(withIdentifier: "toAddIdea", sender: self)
+				})
+				let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+				alertController.addAction(addIdea)
+				alertController.addAction(defaultAction)
+				self.present(alertController, animated: true, completion: nil)
+				insertField.text = ""
+			}
+			
 			button.titleLabel?.text = "Add Your Idea"
 		} else if(sender.selectedSegmentIndex == 1) {
-			loadData(whichOne: 1, index: freelancerIndex)
+			if (myFormData.freelancerIndex != nil) {
+				insertField.text = myFormData.nextFreelancer()
+			} else {
+				let alertController = UIAlertController(title: "Oops!", message: "There are no freelancers at this time. Come back later or add yourself!", preferredStyle: .alert)
+				let addIdea = UIAlertAction(title: "Add Yourself", style: .default, handler: { (UIAlertAction) in
+					self.performSegue(withIdentifier: "toAddIdea", sender: self)
+				})
+				let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+				alertController.addAction(addIdea)
+				alertController.addAction(defaultAction)
+				self.present(alertController, animated: true, completion: nil)
+				insertField.text = ""
+			}
+			
 			button.titleLabel?.text = "Add Yourself"
 		}
 	}
