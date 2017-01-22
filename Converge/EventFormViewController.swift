@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class EventFormViewController: UIViewController {
 	
@@ -57,11 +60,28 @@ class EventFormViewController: UIViewController {
 	}
 	
 	@IBAction func onConnect(_ sender: Any) {
+		var index: Int
+		
+		if(segControl.selectedSegmentIndex == 0) {
+			index = self.myFormData.ideaIndex!
+		} else {
+			index = self.myFormData.freelancerIndex!
+		}
+		
+		let alert = UIAlertController(title: "Thank You", message: "We will notify the original poster immedietly about your interest. Please say a few words below about any relevant work or anything else.", preferredStyle: .alert)
+		alert.addTextField { (textField) in
+			textField.text = ""
+		}
+		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+			let textField = alert?.textFields![0]
+			FIRDatabase.database().reference().child("events").child(self.myFormData.myEvent!).child(self.myFormData.data[self.segControl.selectedSegmentIndex][index].id).child("pending").child((FIRAuth.auth()?.currentUser?.uid)!).setValue(textField?.text)
+			FIRDatabase.database().reference().child("users").child(FIRAuth.auth()?.currentUser?.uid).child("events").child(self.myFormData.myEvent).child("Outward requests")
+		}))
+		self.present(alert, animated: true, completion: nil)
+		
 	}
 	
-	
 	@IBAction func onSegControl(_ sender: UISegmentedControl) {
-		
 		if(sender.selectedSegmentIndex == 0) {
 			if (myFormData.ideaIndex != nil) {
 				insertField.text = myFormData.nextIdea()
