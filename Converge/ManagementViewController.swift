@@ -27,26 +27,28 @@ class ManagementViewController: UIViewController, UITabBarDelegate, UITableViewD
 				self.viewDidAppear(true)
 			})
 		} else {
+			print(myManage.myData)
 			self.table.reloadData()
 		}
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return myManage.teams[0].count + myManage.teams[1].count
+		return myManage.teams.count
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 2//myManage.teams[1][section].members.count
+		return myManage.teams[section].members.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-		cell.textLabel?.text = "Hi"
+		cell.textLabel?.text = myManage.teams[indexPath.row].members[indexPath.section].name
+		cell.detailTextLabel?.text = myManage.teams[indexPath.row].members[indexPath.section].msg
 		return cell
 	}
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		return myManage.teams[1][section].meta.idea
+		return myManage.teams[section].meta.idea
 	}
 	
     override func didReceiveMemoryWarning() {

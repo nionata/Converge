@@ -63,6 +63,7 @@
 		2DA636601E35038700C6273E /* TrackingSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA636371E35038700C6273E /* TrackingSetting.swift */; };
 		2DA636611E35038800C6273E /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA636381E35038700C6273E /* Validatable.swift */; };
 		2DA636621E35038800C6273E /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA636391E35038700C6273E /* Validator.swift */; };
+		2DA636641E350C6500C6273E /* inRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA636631E350C6500C6273E /* inRequest.swift */; };
 		2DA844F01E34739F00E43D40 /* FormationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA844EF1E34739F00E43D40 /* FormationData.swift */; };
 		2DA844F21E34805800E43D40 /* Formation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA844F11E34805800E43D40 /* Formation.swift */; };
 		8C5498F842DF5781E44447C7 /* Pods_Converge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC2DCA6BE870EE72BDD7654 /* Pods_Converge.framework */; };
@@ -129,6 +130,7 @@
 		2DA636371E35038700C6273E /* TrackingSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingSetting.swift; path = SendGrid/TrackingSetting.swift; sourceTree = "<group>"; };
 		2DA636381E35038700C6273E /* Validatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validatable.swift; path = SendGrid/Validatable.swift; sourceTree = "<group>"; };
 		2DA636391E35038700C6273E /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = SendGrid/Validator.swift; sourceTree = "<group>"; };
+		2DA636631E350C6500C6273E /* inRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inRequest.swift; sourceTree = "<group>"; };
 		2DA844EF1E34739F00E43D40 /* FormationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationData.swift; sourceTree = "<group>"; };
 		2DA844F11E34805800E43D40 /* Formation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formation.swift; sourceTree = "<group>"; };
 		E476596F3D0FCFDC53838A10 /* Pods-Converge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Converge.release.xcconfig"; path = "Pods/Target Support Files/Pods-Converge/Pods-Converge.release.xcconfig"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				2DA844EF1E34739F00E43D40 /* FormationData.swift */,
 				2DA6360A1E34DCE200C6273E /* ManagementData.swift */,
 				2DA6360E1E34E66800C6273E /* Team.swift */,
+				2DA636631E350C6500C6273E /* inRequest.swift */,
 				2DA6360C1E34DD3700C6273E /* Member.swift */,
 				2DA844F11E34805800E43D40 /* Formation.swift */,
 			);
@@ -425,6 +428,7 @@
 				2DA636521E35038700C6273E /* Personalization.swift in Sources */,
 				2DA6363B1E35038700C6273E /* APIBlueprint.swift in Sources */,
 				2DA6365B1E35038700C6273E /* SGError+Mail.swift in Sources */,
+				2DA636641E350C6500C6273E /* inRequest.swift in Sources */,
 				2DA6364B1E35038700C6273E /* HeaderValidator.swift in Sources */,
 				2DA636451E35038700C6273E /* ContentDisposition.swift in Sources */,
 				2DA636501E35038700C6273E /* OpenTracking.swift in Sources */,

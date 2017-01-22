@@ -1,5 +1,5 @@
 //
-//  Team.swift
+//  Request.swift
 //  Converge
 //
 //  Created by Nicholas Ionata on 1/22/17.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-struct Team {
-	var meta: Formation
-	var members: [Member]
-	var requests: [inRequest]
+struct inRequest {
+	var name: String
+	var id: String
+	var msg: String
 }
