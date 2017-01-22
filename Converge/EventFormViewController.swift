@@ -21,7 +21,7 @@ class EventFormViewController: UIViewController {
 	
 	var ref = FIRDatabase.database().reference()
 	var event: String = ""
-	var formationData: [[Formation]] = [[]]
+	var formationData: [[Formation]] = [[], []]
 	@IBOutlet weak var segControl: UISegmentedControl!
 	@IBOutlet weak var insertField: UITextView!
 	@IBOutlet weak var button: UIButton!
