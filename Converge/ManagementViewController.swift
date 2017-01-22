@@ -27,7 +27,6 @@ class ManagementViewController: UIViewController, UITabBarDelegate, UITableViewD
 				self.viewDidAppear(true)
 			})
 		} else {
-			print(myManage.myData)
 			self.table.reloadData()
 		}
 	}
