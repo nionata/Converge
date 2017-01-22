@@ -82,6 +82,7 @@
 		2D6C8F4F1E336E1500A6A21C /* Converge */ = {
 			isa = PBXGroup;
 			children = (
+				2DA844EE1E3472F300E43D40 /* Model */,
 				2D6C8F501E336E1500A6A21C /* AppDelegate.swift */,
 				2D6C8F521E336E1500A6A21C /* SignInViewController.swift */,
 				2D6C8F641E337A7600A6A21C /* SignUpViewController.swift */,
@@ -96,6 +97,13 @@
 				2D6C8F621E336F6B00A6A21C /* GoogleService-Info.plist */,
 			);
 			path = Converge;
+			sourceTree = "<group>";
+		};
+		2DA844EE1E3472F300E43D40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		C681E747E28DF9BA249EF8FE /* Frameworks */ = {

@@ -43,7 +43,7 @@ class HomeTableViewController: UITableViewController {
 			}
 			
 			if(self.events.count == 0) {
-				let alertController = UIAlertController(title: "Welcome!", message: "You are not joined or created an event. Start by tapping the top right", preferredStyle: .alert)
+				let alertController = UIAlertController(title: "Welcome!", message: "You have not joined or created an event.", preferredStyle: .alert)
 				let newAction = UIAlertAction(title: "Get Started", style: .default, handler: { (alert) in
 					self.performSegue(withIdentifier: "toCreateAccount", sender: self)
 				})

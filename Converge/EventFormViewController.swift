@@ -52,7 +52,7 @@ class EventFormViewController: UIViewController {
 				}
 			}
 			
-			if(self.formationData[0].count == 0) {
+			if(checkArray(whichOne: 0)) {
 				let alertController = UIAlertController(title: "Oops!", message: "There are no ideas at this time. Come back later or add your own!", preferredStyle: .alert)
 				let addIdea = UIAlertAction(title: "Add Idea", style: .default, handler: { (UIAlertAction) in
 					self.performSegue(withIdentifier: "toAddIdea", sender: self)
@@ -62,7 +62,9 @@ class EventFormViewController: UIViewController {
 				alertController.addAction(defaultAction)
 				self.present(alertController, animated: true, completion: nil)
 				return
-			} else if(self.formationData[1].count == 0) {
+			}
+			
+			if(checkArray(whichOne: 1)) {
 				let alertController = UIAlertController(title: "Oops!", message: "There are no freelancers at this time. Come back later or add yourself!", preferredStyle: .alert)
 				let addFreelancer = UIAlertAction(title: "Add Yourself", style: .default, handler: { (UIAlertAction) in
 					self.performSegue(withIdentifier: "toAddIdea", sender: self)
@@ -76,6 +78,10 @@ class EventFormViewController: UIViewController {
 			
 			self.loadData(whichOne: 0, index: self.ideaIndex)
 		})
+	}
+	
+	func checkArray(whichOne: Int) -> Bool {
+		return formationData[whichOne].count != 0
 	}
 	
 	@IBAction func onNext(_ sender: Any) {
