@@ -17,7 +17,6 @@ class EventFormViewController: UIViewController {
 	var event: String = ""
 	@IBOutlet weak var segControl: UISegmentedControl!
 	@IBOutlet weak var insertField: UITextView!
-	@IBOutlet weak var button: UIButton!
 	var myFormData: FormationData!
 
     override func viewDidLoad() {
@@ -73,10 +72,11 @@ class EventFormViewController: UIViewController {
 			index = self.myFormData.freelancerIndex!
 		}
 		
-		let alert = UIAlertController(title: "Thank You", message: "We will notify the original poster immedietly about your interest. Please say a few words below about any relevant work or anything else.", preferredStyle: .alert)
+		let alert = UIAlertController(title: "Poster Has Been Notified", message: "Add a few words below about your experience or ideas", preferredStyle: .alert)
 		alert.addTextField { (textField) in
 			textField.text = ""
 		}
+		let action = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
 			let textField = alert?.textFields![0]
 			text = (textField?.text)!
@@ -85,6 +85,7 @@ class EventFormViewController: UIViewController {
 			newRef.child("message").setValue(textField?.text)
 			newRef.child("name").setValue(FIRAuth.auth()?.currentUser?.displayName)
 		}))
+		alert.addAction(action)
 		self.present(alert, animated: true, completion: nil)
 		
 		Session.shared.authentication = Authentication.apiKey("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")
@@ -120,8 +121,6 @@ class EventFormViewController: UIViewController {
 				self.present(alertController, animated: true, completion: nil)
 				insertField.text = ""
 			}
-			
-			button.titleLabel?.text = "Add Your Idea"
 		} else if(sender.selectedSegmentIndex == 1) {
 			if (myFormData.freelancerIndex != nil) {
 				insertField.text = myFormData.nextFreelancer()
@@ -136,8 +135,6 @@ class EventFormViewController: UIViewController {
 				self.present(alertController, animated: true, completion: nil)
 				insertField.text = ""
 			}
-			
-			button.titleLabel?.text = "Add Yourself"
 		}
 	}
 	

@@ -301,7 +301,7 @@
 				TargetAttributes = {
 					2D6C8F4C1E336E1500A6A21C = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = FWMGJY73A9;
+						DevelopmentTeam = 2H22J6D529;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -561,7 +561,7 @@
 			baseConfigurationReference = 173C0C86B6108482CA287C9A /* Pods-Converge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FWMGJY73A9;
+				DEVELOPMENT_TEAM = 2H22J6D529;
 				INFOPLIST_FILE = Converge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -576,7 +576,7 @@
 			baseConfigurationReference = E476596F3D0FCFDC53838A10 /* Pods-Converge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FWMGJY73A9;
+				DEVELOPMENT_TEAM = 2H22J6D529;
 				INFOPLIST_FILE = Converge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
