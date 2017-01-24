@@ -18,12 +18,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.navigationController?.navigationBar.isHidden = true
-		
-		FIRAuth.auth()?.addStateDidChangeListener { (auth, user) in
-			if user != nil {
-				self.performSegue(withIdentifier: "toHomeFromIn", sender: self)
-			}
-		}
 	}
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

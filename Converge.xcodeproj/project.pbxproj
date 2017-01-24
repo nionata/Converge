@@ -66,6 +66,7 @@
 		2DA636641E350C6500C6273E /* inRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA636631E350C6500C6273E /* inRequest.swift */; };
 		2DA844F01E34739F00E43D40 /* FormationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA844EF1E34739F00E43D40 /* FormationData.swift */; };
 		2DA844F21E34805800E43D40 /* Formation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA844F11E34805800E43D40 /* Formation.swift */; };
+		2DBBC5471E36614800881016 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBBC5461E36614800881016 /* LaunchViewController.swift */; };
 		8C5498F842DF5781E44447C7 /* Pods_Converge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC2DCA6BE870EE72BDD7654 /* Pods_Converge.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,7 @@
 		2DA636631E350C6500C6273E /* inRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inRequest.swift; sourceTree = "<group>"; };
 		2DA844EF1E34739F00E43D40 /* FormationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationData.swift; sourceTree = "<group>"; };
 		2DA844F11E34805800E43D40 /* Formation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formation.swift; sourceTree = "<group>"; };
+		2DBBC5461E36614800881016 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E476596F3D0FCFDC53838A10 /* Pods-Converge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Converge.release.xcconfig"; path = "Pods/Target Support Files/Pods-Converge/Pods-Converge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,8 +191,9 @@
 				2D5C304A1E33EDE700205313 /* EventFormViewController.swift */,
 				2DA636081E34DBBB00C6273E /* ManagementViewController.swift */,
 				2D5C30411E33BC2600205313 /* Main.storyboard */,
-				2D6C8F571E336E1500A6A21C /* Assets.xcassets */,
 				2D6C8F591E336E1500A6A21C /* LaunchScreen.storyboard */,
+				2DBBC5461E36614800881016 /* LaunchViewController.swift */,
+				2D6C8F571E336E1500A6A21C /* Assets.xcassets */,
 				2D6C8F5C1E336E1500A6A21C /* Info.plist */,
 				2D6C8F621E336F6B00A6A21C /* GoogleService-Info.plist */,
 			);
@@ -438,6 +441,7 @@
 				2DA636601E35038700C6273E /* TrackingSetting.swift in Sources */,
 				2DA6363D1E35038700C6273E /* ASM.swift in Sources */,
 				2DA636471E35038700C6273E /* DictionaryConvertible.swift in Sources */,
+				2DBBC5471E36614800881016 /* LaunchViewController.swift in Sources */,
 				2DA636481E35038700C6273E /* Email.swift in Sources */,
 				2DA844F21E34805800E43D40 /* Formation.swift in Sources */,
 				2D6C8F511E336E1500A6A21C /* AppDelegate.swift in Sources */,
@@ -561,6 +565,7 @@
 			baseConfigurationReference = 173C0C86B6108482CA287C9A /* Pods-Converge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 2H22J6D529;
 				INFOPLIST_FILE = Converge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
@@ -576,6 +581,7 @@
 			baseConfigurationReference = E476596F3D0FCFDC53838A10 /* Pods-Converge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 2H22J6D529;
 				INFOPLIST_FILE = Converge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fin-g6-37u">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Launch View Controller-->
+        <scene sceneID="eQa-78-LQf">
+            <objects>
+                <viewController id="Fin-g6-37u" customClass="LaunchViewController" customModule="Converge" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vUP-ws-Mce"/>
+                        <viewControllerLayoutGuide type="bottom" id="t5C-Ze-wlA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FC4-GB-DnT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W3D-nM-hck">
+                                <rect key="frame" x="87" y="304" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0009029206784" green="0.01795088089" blue="0.1384240165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageWell" destination="W3D-nM-hck" id="gla-mF-ykM"/>
+                        <segue destination="4p4-nD-Df7" kind="show" identifier="toHome" id="eJY-sE-Dv4"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toIn" id="COO-SF-X60"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lV3-mB-o1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1023" y="333"/>
+        </scene>
         <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -71,7 +100,7 @@
                                     <segue destination="U90-mC-uN3" kind="show" id="7Hl-g2-AC5"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="duu-hF-8BJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mogo" translatesAutoresizingMaskIntoConstraints="NO" id="duu-hF-8BJ">
                                 <rect key="frame" x="80" y="85" width="255" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -81,7 +110,7 @@
                     <connections>
                         <outlet property="newEmail" destination="k07-pN-vCW" id="2cn-zn-FaZ"/>
                         <outlet property="newPassword" destination="iH3-Fj-k1n" id="5t8-Se-tBX"/>
-                        <segue destination="4p4-nD-Df7" kind="show" identifier="toHomeFromIn" id="aLA-1M-iel"/>
+                        <segue destination="4p4-nD-Df7" kind="show" identifier="toHomeFromIn" id="n5P-6z-psU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -144,7 +173,7 @@
                                     <action selector="onSignUp:" destination="U90-mC-uN3" eventType="touchUpInside" id="V3j-e9-JEB"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Nhe-If-OAq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mogo" translatesAutoresizingMaskIntoConstraints="NO" id="Nhe-If-OAq">
                                 <rect key="frame" x="80" y="28" width="255" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -162,7 +191,7 @@
             </objects>
             <point key="canvasLocation" x="921.73913043478262" y="45.652173913043484"/>
         </scene>
-        <!--Converge-->
+        <!--Events-->
         <scene sceneID="va7-cl-SRE">
             <objects>
                 <tableViewController id="agq-Kl-MVK" customClass="HomeTableViewController" customModule="Converge" customModuleProvider="target" sceneMemberID="viewController">
@@ -185,15 +214,15 @@
                             <outlet property="delegate" destination="agq-Kl-MVK" id="jEH-fB-ajR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Converge" id="HEO-2u-YCD">
+                    <navigationItem key="navigationItem" title="Events" id="HEO-2u-YCD">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="uvR-SR-afh">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.0009029206784" green="0.01795088089" blue="0.1384240165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="onLogOut:" destination="agq-Kl-MVK" id="5at-c0-B1p"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cNc-h7-XUK">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.0009029206784" green="0.01795088089" blue="0.1384240165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="u17-bg-EEk" kind="show" identifier="toCreateAccount" id="4zN-dq-aJ8"/>
                             </connections>
@@ -209,7 +238,7 @@
             </objects>
             <point key="canvasLocation" x="920.79999999999995" y="743.47826086956525"/>
         </scene>
-        <!--Add or Create a Group-->
+        <!--New Event-->
         <scene sceneID="And-Q3-oFA">
             <objects>
                 <viewController id="u17-bg-EEk" customClass="NewEventViewController" customModule="Converge" customModuleProvider="target" sceneMemberID="viewController">
@@ -234,7 +263,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jd-E9-vGf">
                                 <rect key="frame" x="20" y="363" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0009029206784" green="0.01795088089" blue="0.1384240165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Add or Join Event">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -243,9 +272,9 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.89196157200000004" green="0.99044142270000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add or Create a Group" id="hCF-9U-tnV"/>
+                    <navigationItem key="navigationItem" title="New Event" id="hCF-9U-tnV"/>
                     <connections>
                         <outlet property="button" destination="9jd-E9-vGf" id="raq-iU-7Mz"/>
                         <outlet property="newEvent" destination="rHO-hE-ndf" id="quo-Eu-ncU"/>
@@ -339,7 +368,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFF-6G-lbM">
                                 <rect key="frame" x="20" y="372" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0009029206784" green="0.01795088089" blue="0.1384240165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Add">
                                     <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -348,7 +377,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.89196157203305271" green="0.99044142268595758" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="newIdea" destination="aaP-x9-sm4" id="yOj-Vl-S39"/>
@@ -371,9 +400,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nog-Lg-V3B">
-                                <rect key="frame" x="0.0" y="90" width="414" height="602"/>
+                                <rect key="frame" x="75" y="132" width="246" height="281"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.00090292067843789309" green="0.01795088089302628" blue="0.13842401649746194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.00090292067843789309" green="0.01795088089302628" blue="0.13842401649746194" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -413,7 +442,7 @@
                                     <segment title="Ideas"/>
                                     <segment title="Freelancers"/>
                                 </segments>
-                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="onSegControl:" destination="yEU-so-0Ub" eventType="valueChanged" id="uzH-lh-axX"/>
                                 </connections>
@@ -428,7 +457,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0009029206784" green="0.01795088089" blue="0.1384240165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Formation" image="Lightbulb" id="O8i-Ue-USO"/>
                     <toolbarItems/>
@@ -479,13 +508,14 @@
     </scenes>
     <resources>
         <image name="Lightbulb" width="25" height="25"/>
-        <image name="Logo" width="770" height="325"/>
         <image name="add" width="140" height="140"/>
         <image name="connect" width="51" height="75"/>
         <image name="members" width="25" height="25"/>
+        <image name="mogo" width="770" height="325"/>
         <image name="skip button" width="27" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9b4-Rh-T0U"/>
+        <segue reference="eJY-sE-Dv4"/>
+        <segue reference="iEF-Bx-qIk"/>
     </inferredMetricsTieBreakers>
 </document>
