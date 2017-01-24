@@ -16,7 +16,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var newPassword: UITextField!
 	
 	override func viewDidLoad() {
-		super.viewDidLoad()
 		self.navigationController?.navigationBar.isHidden = true
 	}
 	
